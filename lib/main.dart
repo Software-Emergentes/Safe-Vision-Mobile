@@ -9,45 +9,39 @@ import 'shared/widgets/terms_screen.dart';
 import 'shared/widgets/account_created_screen.dart';
 
 void main() {
-  runApp(const VisualGuideApp());
+  runApp(const SafeVisionApp());
 }
 
-class VisualGuideApp extends StatelessWidget {
-  const VisualGuideApp({super.key});
+class SafeVisionApp extends StatelessWidget {
+  const SafeVisionApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'VisualGuide',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: const Color(0xFF239B56),
-          scaffoldBackgroundColor: Colors.white,
-          // Configuración global de Poppins
-          fontFamily: 'Poppins',
-          textTheme: const TextTheme(
-            displayLarge: TextStyle(fontFamily: 'Poppins'),
-            displayMedium: TextStyle(fontFamily: 'Poppins'),
-            displaySmall: TextStyle(fontFamily: 'Poppins'),
-            headlineLarge: TextStyle(fontFamily: 'Poppins'),
-            headlineMedium: TextStyle(fontFamily: 'Poppins'),
-            headlineSmall: TextStyle(fontFamily: 'Poppins'),
-            titleLarge: TextStyle(fontFamily: 'Poppins'),
-            titleMedium: TextStyle(fontFamily: 'Poppins'),
-            titleSmall: TextStyle(fontFamily: 'Poppins'),
-            bodyLarge: TextStyle(fontFamily: 'Poppins'),
-            bodyMedium: TextStyle(fontFamily: 'Poppins'),
-            bodySmall: TextStyle(fontFamily: 'Poppins'),
-            labelLarge: TextStyle(fontFamily: 'Poppins'),
-            labelMedium: TextStyle(fontFamily: 'Poppins'),
-            labelSmall: TextStyle(fontFamily: 'Poppins'),
-          ),
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xFF239B56),
-            primary: const Color(0xFF239B56),
-          ),
+      title: 'SafeVision',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: const Color(0xFF239B56),
+        scaffoldBackgroundColor: Colors.white,
+        // Configuración global de Poppins
+        fontFamily: 'Poppins',
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(fontFamily: 'Poppins'),
+          displayMedium: TextStyle(fontFamily: 'Poppins'),
+          displaySmall: TextStyle(fontFamily: 'Poppins'),
+          headlineLarge: TextStyle(fontFamily: 'Poppins'),
+          headlineMedium: TextStyle(fontFamily: 'Poppins'),
+          headlineSmall: TextStyle(fontFamily: 'Poppins'),
+          titleLarge: TextStyle(fontFamily: 'Poppins'),
+          titleMedium: TextStyle(fontFamily: 'Poppins'),
+          titleSmall: TextStyle(fontFamily: 'Poppins'),
+          bodyLarge: TextStyle(fontFamily: 'Poppins'),
+          bodyMedium: TextStyle(fontFamily: 'Poppins'),
+          bodySmall: TextStyle(fontFamily: 'Poppins'),
+          labelLarge: TextStyle(fontFamily: 'Poppins'),
+          labelMedium: TextStyle(fontFamily: 'Poppins'),
+          labelSmall: TextStyle(fontFamily: 'Poppins'),
         ),
-        home: const HomeView());
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF239B56),
           primary: const Color(0xFF239B56),
@@ -61,6 +55,7 @@ class VisualGuideApp extends StatelessWidget {
         '/company_info': (context) => const CompanyInfoScreen(),
         '/terms': (context) => const TermsScreen(),
         '/account_created': (context) => const AccountCreatedScreen(),
+        '/home': (context) => const HomeView(),
       },
     );
   }

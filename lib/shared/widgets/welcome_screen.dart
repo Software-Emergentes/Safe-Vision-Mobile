@@ -61,7 +61,15 @@ class WelcomeScreen extends StatelessWidget {
                       height: 48,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/login');
+                          // Navigate to home view directly (for testing)
+                          // In production, this should go to login first
+                          Navigator.pushReplacementNamed(context, '/home');
+
+                          // Or if you want to keep welcome in stack:
+                          // Navigator.pushNamed(context, '/home');
+
+                          // Or if you want to go to login:
+                          // Navigator.pushNamed(context, '/login');
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
