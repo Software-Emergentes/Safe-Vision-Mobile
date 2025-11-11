@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safevision/Trip/views/trip_history_view.dart';
 import '../../shared/widgets/custom_app_bar.dart';
 import '../../shared/widgets/custom_bottom_nav_bar.dart';
 import '../widgets/current_trip_card.dart';
@@ -48,12 +49,32 @@ class _HomeViewState extends State<HomeView> {
     ),
   ];
 
+  void _onBottomNavTap(int index) {
+    if (index == 1) {
+      // Navegar a Historial
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const TripHistoryView(),
+        ),
+      );
+    } else {
+      setState(() {
+        _currentIndex = index;
+      });
+      // Aquí puedes agregar navegación para otros índices
+      // 0: Home (ya estamos aquí)
+      // 2: Cámara
+      // 3: Perfil
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
       appBar: const CustomAppBar(
-        userName: 'Juan Pérez',
+        userName: 'Fabia Herrera',
         notificationCount: 9,
       ),
       body: SingleChildScrollView(
@@ -99,11 +120,7 @@ class _HomeViewState extends State<HomeView> {
       ),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+        onTap: _onBottomNavTap,
       ),
     );
   }
