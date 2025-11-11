@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'shared/widgets/welcome_screen.dart';
+import 'shared/widgets/login_screen.dart';
+import 'shared/widgets/select_profile_screen.dart';
+import 'shared/widgets/sign_up_screen.dart';
+import 'shared/widgets/company_info_screen.dart';
+import 'shared/widgets/terms_screen.dart';
+import 'shared/widgets/account_created_screen.dart';
 
 void main() {
   runApp(const VisualGuideApp());
@@ -39,7 +46,15 @@ class VisualGuideApp extends StatelessWidget {
           primary: const Color(0xFF239B56),
         ),
       ),
-      //home: const AIRecognitionScreen(),
+      home: const WelcomeScreen(),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/select_profile': (context) => const SelectProfileScreen(),
+        '/sign_up': (context) => const SignUpScreen(),
+        '/company_info': (context) => const CompanyInfoScreen(),
+        '/terms': (context) => const TermsScreen(),
+        '/account_created': (context) => const AccountCreatedScreen(),
+      },
     );
   }
 }
