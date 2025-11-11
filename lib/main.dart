@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safevision/Trip/views/home_view.dart';
 import 'shared/widgets/welcome_screen.dart';
 import 'shared/widgets/login_screen.dart';
 import 'shared/widgets/select_profile_screen.dart';
@@ -17,30 +18,36 @@ class VisualGuideApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'VisualGuide',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color(0xFF239B56),
-        scaffoldBackgroundColor: Colors.white,
-        // Configuración global de Poppins
-        fontFamily: 'Poppins',
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontFamily: 'Poppins'),
-          displayMedium: TextStyle(fontFamily: 'Poppins'),
-          displaySmall: TextStyle(fontFamily: 'Poppins'),
-          headlineLarge: TextStyle(fontFamily: 'Poppins'),
-          headlineMedium: TextStyle(fontFamily: 'Poppins'),
-          headlineSmall: TextStyle(fontFamily: 'Poppins'),
-          titleLarge: TextStyle(fontFamily: 'Poppins'),
-          titleMedium: TextStyle(fontFamily: 'Poppins'),
-          titleSmall: TextStyle(fontFamily: 'Poppins'),
-          bodyLarge: TextStyle(fontFamily: 'Poppins'),
-          bodyMedium: TextStyle(fontFamily: 'Poppins'),
-          bodySmall: TextStyle(fontFamily: 'Poppins'),
-          labelLarge: TextStyle(fontFamily: 'Poppins'),
-          labelMedium: TextStyle(fontFamily: 'Poppins'),
-          labelSmall: TextStyle(fontFamily: 'Poppins'),
+        title: 'VisualGuide',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: const Color(0xFF239B56),
+          scaffoldBackgroundColor: Colors.white,
+          // Configuración global de Poppins
+          fontFamily: 'Poppins',
+          textTheme: const TextTheme(
+            displayLarge: TextStyle(fontFamily: 'Poppins'),
+            displayMedium: TextStyle(fontFamily: 'Poppins'),
+            displaySmall: TextStyle(fontFamily: 'Poppins'),
+            headlineLarge: TextStyle(fontFamily: 'Poppins'),
+            headlineMedium: TextStyle(fontFamily: 'Poppins'),
+            headlineSmall: TextStyle(fontFamily: 'Poppins'),
+            titleLarge: TextStyle(fontFamily: 'Poppins'),
+            titleMedium: TextStyle(fontFamily: 'Poppins'),
+            titleSmall: TextStyle(fontFamily: 'Poppins'),
+            bodyLarge: TextStyle(fontFamily: 'Poppins'),
+            bodyMedium: TextStyle(fontFamily: 'Poppins'),
+            bodySmall: TextStyle(fontFamily: 'Poppins'),
+            labelLarge: TextStyle(fontFamily: 'Poppins'),
+            labelMedium: TextStyle(fontFamily: 'Poppins'),
+            labelSmall: TextStyle(fontFamily: 'Poppins'),
+          ),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF239B56),
+            primary: const Color(0xFF239B56),
+          ),
         ),
+        home: const HomeView());
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF239B56),
           primary: const Color(0xFF239B56),
