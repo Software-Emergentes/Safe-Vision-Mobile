@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:safevision/Monitoring/views/camera_connection_view.dart';
-import 'package:safevision/Trip/views/trip_history_view.dart';
 import '../../shared/widgets/custom_app_bar.dart';
 import '../../shared/widgets/custom_bottom_nav_bar.dart';
 import '../widgets/current_trip_card.dart';
@@ -9,6 +7,10 @@ import '../../Monitoring/widgets/stats_card.dart';
 import '../../Notification/widgets/risk_level_card.dart';
 import '../../Notification/widgets/recent_alerts_list.dart';
 import '../../Notification/models/alert_model.dart';
+import 'trip_history_view.dart';
+import '../../Monitoring/views/camera_connection_view.dart';
+import '../../Monitoring/views/camera_disconnected_view.dart';
+import '../../Notification/views/notifications_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -81,9 +83,17 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         userName: 'Fabia Herrera',
         notificationCount: 9,
+        onNotificationPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const NotificationsView(),
+            ),
+          );
+        },
       ),
       body: SingleChildScrollView(
         child: Column(
