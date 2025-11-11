@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safevision/Monitoring/views/camera_connection_view.dart';
 import 'package:safevision/Trip/views/trip_history_view.dart';
 import '../../shared/widgets/custom_app_bar.dart';
 import '../../shared/widgets/custom_bottom_nav_bar.dart';
@@ -58,13 +59,20 @@ class _HomeViewState extends State<HomeView> {
           builder: (context) => const TripHistoryView(),
         ),
       );
+    } else if (index == 2) {
+      // Navegar a Cámara (puedes elegir cuál vista mostrar)
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const CameraConnectionView(),
+          // O usa: const CameraDisconnectedView()
+        ),
+      );
     } else {
       setState(() {
         _currentIndex = index;
       });
-      // Aquí puedes agregar navegación para otros índices
       // 0: Home (ya estamos aquí)
-      // 2: Cámara
       // 3: Perfil
     }
   }
