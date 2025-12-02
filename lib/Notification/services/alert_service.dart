@@ -12,8 +12,14 @@ class AlertService {
   AlertService._internal();
 
   // Configuración del servidor
-  static const String SERVER_URL =
-      'http://192.168.1.54:5000'; // Cambiar a IP del servidor
+  // Para desarrollo local:
+  // - Emulador Android: usar 'http://10.0.2.2:5272' (10.0.2.2 apunta al localhost de la máquina host)
+  // - Emulador iOS/Web: usar 'http://localhost:5272'
+  // - Dispositivo físico: usar la IP de tu red (ej: 'http://192.168.18.12:5272')
+  // Para producción, cambiar por la IP del servidor
+  // static const String SERVER_URL = 'http://10.0.2.2:5272'; // Android Emulator - apunta al localhost:5272 del host
+  static const String SERVER_URL = 'http://localhost:5272'; // iOS/Web
+  // static const String SERVER_URL = 'http://192.168.18.12:5272'; // Dispositivo físico
 
   IO.Socket? _socket;
   bool _isConnected = false;
