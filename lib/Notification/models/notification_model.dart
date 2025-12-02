@@ -19,8 +19,8 @@ class NotificationModel {
   final String description;
   final DateTime timestamp;
   final NotificationType type;
-  final bool isRead;
-  final bool isNew;
+  bool isRead;
+  bool isNew;
 
   NotificationModel({
     required this.id,
